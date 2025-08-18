@@ -1,62 +1,112 @@
+# Accessibility Analyzer Website
 
-# Accessibility Checker
+A web-based tool designed to perform on-demand accessibility audits of any website, helping developers identify and fix issues based on WCAG (Web Content Accessibility Guidelines) standards.
 
-Accessibility Checker is a web-based tool designed to help web developers and accessibility auditors in assessing the accessibility of websites. It leverages Puppeteer and axe-core to automate the detection of common accessibility issues, providing a quick and efficient means to ensure web content is accessible to all users, including those with disabilities. This tool is particularly useful for ensuring compliance with Web Content Accessibility Guidelines (WCAG).
+![Live Demo Screenshot]<img width="1903" height="679" alt="image" src="https://github.com/user-attachments/assets/17523105-d3b6-4679-a578-a97d9bdecf61" />
+
+
+
+
+---
+
+## Table of Contents
+
+- [About The Project](#about-the-project)
+- [How It Works](#how-it-works)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
+## About The Project
+
+This project provides a simple yet powerful interface for developers and designers to quickly assess the accessibility of their web pages. By entering a URL, users can receive a detailed report of accessibility violations, presented in a clear and actionable format. The goal is to make accessibility testing a more integrated part of the web development workflow.
+
+Key features include:
+* **On-Demand Audits:** Analyze any live website by simply providing its URL.
+* **Automated Analysis:** Leverages powerful tools to automatically scan a webpage's DOM for accessibility violations.
+* **WCAG-Based Reporting:** Audits are performed against established WCAG standards to ensure comprehensive testing.
+* **Dynamic Front-End:** A clean user interface allows users to initiate scans and view the resulting audit data in a formatted table.
+
+---
+
+## How It Works
+
+The application uses a client-server architecture:
+
+1.  **User Input:** The user submits a URL through the front-end interface built with HTML, CSS, and JavaScript.
+2.  **Back-End Processing:** The Node.js and Express.js server receives the request.
+3.  **Headless Browsing:** **Puppeteer** launches a headless instance of Chromium to navigate to the target URL.
+4.  **Accessibility Scan:** Once the page is loaded, **axe-core** is injected into the page to perform the accessibility audit.
+5.  **Results:** The audit results (a JSON object detailing violations) are sent back to the server.
+6.  **Display:** The server forwards the results to the front-end, where they are dynamically rendered in a table for the user to review.
+
+---
+
+## Built With
+
+This project utilizes a modern tech stack to deliver a fast and reliable user experience.
+
+* **Back-End:**
+    * [Node.js](https://nodejs.org/) - JavaScript Runtime Environment
+    * [Express.js](https://expressjs.com/) - Web Framework for Node.js
+* **Front-End:**
+    * [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+    * [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+    * [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* **Core Tools:**
+    * [Puppeteer](https://pptr.dev/) - Headless Chrome Node.js API
+    * [axe-core](https://github.com/dequelabs/axe-core) - Accessibility Testing Engine
+
+---
 
 ## Getting Started
 
-These instructions will guide you on how to set up and run the Accessibility Checker on your local machine for development and testing purposes.
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
-- Node.js (Download from [Node.js website](https://nodejs.org/))
-- npm (Comes with Node.js)
+You must have Node.js and npm (Node Package Manager) installed on your machine.
+* You can download Node.js [here](https://nodejs.org/).
 
-### Installing
+### Installation
 
-First, clone the repository to your local machine:
+1.  **Clone the repository**
+    ```sh
+    git clone [https://github.com/SambhavJ2004/accessibility-checker.git](https://github.com/SambhavJ2004/accessibility-checker.git)
+    ```
+2.  **Navigate to the project directory**
+    ```sh
+    cd accessibility-checker
+    ```
+3.  **Install NPM packages**
+    ```sh
+    npm install
+    ```
+4.  **Start the server**
+    ```sh
+    npm start
+    ```
+    The application should now be running on `http://localhost:3000` (or the port specified in your server code).
 
-```bash
-git clone https://github.com/mobilerast/accessibility-checker.git
-cd accessibility-checker
-```
+---
 
-Then, install the necessary dependencies:
+## Usage
 
-```bash
-npm install
-```
+1.  Open your web browser and navigate to the application's URL (e.g., `http://localhost:3000`).
+2.  Enter the full URL of the website you wish to analyze in the input field.
+3.  Click the "Analyze" or "Scan" button.
+4.  Wait for the audit to complete. The results will be displayed in the table below, showing any detected accessibility violations.
 
-### Usage
+---
 
-To run the Accessibility Checker, execute the following command in the root directory of the project:
+## License
 
-```bash
-node server.js
-```
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Open a browser and navigate to `http://localhost:3001`. Enter the URL of the website you want to check in the input field and click the "Check Accessibility" button. The results will be displayed in an HTML table format.
-
-### UI Customization
-
-- The project includes a `style.css` file for basic styling.
-- The footer of the UI contains links to Rast Mobile's website and social media accounts.
-- You can modify `style.css` and the HTML files to customize the UI according to your branding and design preferences.
-
-### Contributing
-
-Contributions to the Accessibility Checker are welcome. Please fork the repository and submit a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
-
-### License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
-
-### Contact
-
-For any queries, please reach out to Rast Mobile at mobilerast@gmail.com.
-
-### Acknowledgments
-
-- Puppeteer (https://pptr.dev/)
-- axe-core (https://www.deque.com/axe/)
+---
