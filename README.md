@@ -104,9 +104,3 @@ You must have Node.js and npm (Node Package Manager) installed on your machine.
 4.  Wait for the audit to complete. The results will be displayed in the table below, showing any detected accessibility violations.
 
 ---
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
